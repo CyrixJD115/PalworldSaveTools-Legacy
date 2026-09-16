@@ -14,18 +14,27 @@
 
 ---
 
-### **Download the standalone version from [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)** 
+### **Download the standalone version from [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest)** 
 
 ---
 
 </div>
 <div align="center">
 
-> **⚠️ DESCONTINUADO** — A versão 2.4.5 é a última versão do Palworld Save Tools. O projeto está desatualizado e já não é mantido.
-> O desenvolvimento continua no **PalStudio** (anteriormente Palworld Save Pal).
-> Website: https://palworldsavepal.app/ · Discord: https://discord.gg/YWZFPy9G8J · Nexus: https://www.nexusmods.com/palworld/mods/1827
+## ⚠️ Palworld Save Tools — Descontinuado
 
+**A versão 2.4.5 é a última versão.** O projeto está desatualizado e várias funcionalidades estão quebradas porque o Palworld avançou além do que esta versão suporta, pelo que a utilização continuada já não é recomendada.
 
+Foi iniciado originalmente por **Pylar**, mas surgiram imprevistos para ele e ele seguiu em frente. O PST foi incorporado no kit de ferramentas sucessor **PalStudio** (antigo Palworld Save Pal), que combina PST e Palworld Save Pal numa ferramenta moderna e mantida.
+
+O código desatualizado continua vivo como projeto legado em [PalworldSaveTools-Legacy](https://github.com/CyrixJD115/PalworldSaveTools-Legacy), sob **Cyrix**, originalmente coparceiro do Pylar, que assumiu o projeto e o mantém como um arquivo desatualizado que hoje serve como recurso de aprendizagem sobre como funciona a edição de saves. PalStudio continua a ser a melhor opção.
+
+**Onde o desenvolvimento continua — PalStudio:**
+- **Site:** https://palworldsavepal.app/
+- **Discord:** https://discord.gg/YWZFPy9G8J
+- **Nexus Mods:** https://www.nexusmods.com/palworld/mods/1827
+
+*Obrigado a todos os que utilizaram e apoiaram o Palworld Save Tools. Vemo-nos no Discord do PalStudio.*
 
 ## Visão geral
 
@@ -227,7 +236,7 @@ Acessíveis via **Menu → Funções**, essas operações de nível de servidor 
 
 ### Construções independentes (recomendado)
 
-Binários pré-construídos estão disponíveis para todas as três plataformas principais de [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest):
+Binários pré-construídos estão disponíveis para todas as três plataformas principais de [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest):
 
 | Plataforma | Baixar | Requisitos |
 |----------|----------|-------------|

@@ -11,7 +11,7 @@
 [![NexusMods](https://img.shields.io/badge/NexusMods-Download-orange)](https://www.nexusmods.com/palworld/mods/3190)
 [![Discord](https://img.shields.io/badge/Discord-Join_for_support-blue)](https://discord.gg/YWZFPy9G8J)
 
-**Download:** [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest) · [Nexus Mods](https://www.nexusmods.com/palworld/mods/3190)
+**Download:** [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest) · [Nexus Mods](https://www.nexusmods.com/palworld/mods/3190)
 
 **Language / 语言：** [English](README.md) | [简体中文](resources/readme/README.zh_CN.md) | [Deutsch](resources/readme/README.de_DE.md) | [Español](resources/readme/README.es_ES.md) | [Français](resources/readme/README.fr_FR.md) | [Русский](resources/readme/README.ru_RU.md) | [日本語](resources/readme/README.ja_JP.md) | [한국어](resources/readme/README.ko_KR.md) | [Português (Brasil)](resources/readme/README.pt_BR.md) | [Português (Portugal)](resources/readme/README.pt_PT.md)
 
@@ -21,11 +21,20 @@
 
 <div align="center">
 
-> **⚠️ DISCONTINUED** — Version 2.4.5 is the final release of Palworld Save Tools. The project is outdated and no longer maintained.
-> Development continues in **PalStudio** (formerly Palworld Save Pal).
-> Website: https://palworldsavepal.app/ · Discord: https://discord.gg/YWZFPy9G8J · Nexus: https://www.nexusmods.com/palworld/mods/1827
+## ⚠️ Palworld Save Tools — Discontinued
 
+**Version 2.4.5 is the final release.** The project is outdated and several features are broken because Palworld has moved past what this version supports, so continued use is no longer recommended.
 
+It was originally started by **Pylar**, but things came up for him and he has since moved on. PST has been merged into the successor toolkit **PalStudio** (formerly Palworld Save Pal), which combines PST and Palworld Save Pal into one modern, maintained tool.
+
+The outdated codebase lives on as a legacy project at [PalworldSaveTools-Legacy](https://github.com/CyrixJD115/PalworldSaveTools-Legacy), under **Cyrix**, originally Pylar's co-partner, who took it over and keeps it as an outdated archive that now serves as a learning resource for how save editing works. PalStudio is still the better option.
+
+**Where development continues — PalStudio:**
+- **Website:** https://palworldsavepal.app/
+- **Discord:** https://discord.gg/YWZFPy9G8J
+- **Nexus Mods:** https://www.nexusmods.com/palworld/mods/1827
+
+*Thank you to everyone who used and supported Palworld Save Tools. See you on the PalStudio Discord.*
 
 ## Overview
 
@@ -225,7 +234,7 @@ Accessible via **Menu → Functions**, these server-grade operations include:
 
 ### Standalone Builds (Recommended)
 
-Pre-built binaries are available for all three major platforms from [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest):
+Pre-built binaries are available for all three major platforms from [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest):
 
 | Platform | Download | Requirements |
 |----------|----------|--------------|

@@ -14,18 +14,27 @@
 
 ---
 
-### **Скачайте автономную версию с [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)** 
+### **Скачайте автономную версию с [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest)** 
 
 ---
 
 </div>
 <div align="center">
 
-> **⚠️ ПРОЕКТ ЗАКРЫТ** — Версия 2.4.5 — последняя версия Palworld Save Tools. Проект устарел и больше не поддерживается.
-> Разработка продолжается в **PalStudio** (ранее Palworld Save Pal).
-> Website: https://palworldsavepal.app/ · Discord: https://discord.gg/YWZFPy9G8J · Nexus: https://www.nexusmods.com/palworld/mods/1827
+## ⚠️ Palworld Save Tools — Проект закрыт
 
+**Версия 2.4.5 — последняя.** Проект устарел, а ряд функций сломан, потому что Palworld ушёл далеко вперёд от того, что поддерживает эта версия. Продолжать использовать его не рекомендуется.
 
+Изначально проект запустил **Pylar**, но у него появились дела, и он переключился на другое. PST был объединён с инструментом-преемником **PalStudio** (ранее Palworld Save Pal), который объединяет PST и Palworld Save Pal в один современный и поддерживаемый инструмент.
+
+Устаревший код продолжает жить как легаси-проект [PalworldSaveTools-Legacy](https://github.com/CyrixJD115/PalworldSaveTools-Legacy), которым занимается **Cyrix**, изначально соратник Pylar, — он взял его на себя и хранит как устаревший архив, который служит учебным материалом о том, как устроено редактирование сохранений. PalStudio по-прежнему лучший вариант.
+
+**Где продолжается разработка — PalStudio:**
+- **Сайт:** https://palworldsavepal.app/
+- **Discord:** https://discord.gg/YWZFPy9G8J
+- **Nexus Mods:** https://www.nexusmods.com/palworld/mods/1827
+
+*Спасибо всем, кто пользовался и поддерживал Palworld Save Tools. Увидимся в Discord PalStudio.*
 
 ## Обзор
 
@@ -224,7 +233,7 @@ Palworld Save Tools (PST) — это быстрое универсальное �
 
 ### Автономные сборки (рекомендуется)
 
-Предварительно созданные двоичные файлы доступны для всех трех основных платформ из [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest):
+Предварительно созданные двоичные файлы доступны для всех трех основных платформ из [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest):
 
 | Платформа | Скачать | Требования |
 |----------|----------|--------------|

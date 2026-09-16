@@ -14,18 +14,27 @@
 
 ---
 
-### **Descarga la versión independiente de [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)** 
+### **Descarga la versión independiente de [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest)** 
 
 ---
 
 </div>
 <div align="center">
 
-> **⚠️ DESCONTINUADO** — La versión 2.4.5 es la última versión de Palworld Save Tools. El proyecto está obsoleto y ya no se mantiene.
-> El desarrollo continúa en **PalStudio** (anteriormente Palworld Save Pal).
-> Website: https://palworldsavepal.app/ · Discord: https://discord.gg/YWZFPy9G8J · Nexus: https://www.nexusmods.com/palworld/mods/1827
+## ⚠️ Palworld Save Tools — Descontinuado
 
+**La versión 2.4.5 es la última versión.** El proyecto está desactualizado y varias funciones están rotas porque Palworld ha superado lo que esta versión soporta, por lo que ya no se recomienda su uso.
 
+Fue iniciado originalmente por **Pylar**, pero le surgieron inconvenientes y desde entonces ha seguido adelante con otras cosas. PST se ha fusionado en el conjunto de herramientas sucesor **PalStudio** (anteriormente Palworld Save Pal), que combina PST y Palworld Save Pal en una herramienta moderna y mantenida.
+
+El código desactualizado sigue viviendo como proyecto heredado en [PalworldSaveTools-Legacy](https://github.com/CyrixJD115/PalworldSaveTools-Legacy), a cargo de **Cyrix**, originalmente copartícipe de Pylar, quien lo asumió y lo conserva como un archivo desactualizado que hoy sirve como recurso didáctico para aprender cómo funciona la edición de partidas. PalStudio sigue siendo la mejor opción.
+
+**Dónde continúa el desarrollo — PalStudio:**
+- **Sitio web:** https://palworldsavepal.app/
+- **Discord:** https://discord.gg/YWZFPy9G8J
+- **Nexus Mods:** https://www.nexusmods.com/palworld/mods/1827
+
+*Gracias a todos los que usaron y apoyaron Palworld Save Tools. Nos vemos en el Discord de PalStudio.*
 
 ## Descripción general
 
@@ -231,7 +240,7 @@ Accesibles a través de **Menú → Funciones**, estas operaciones de nivel de s
 
 ### Compilaciones independientes (recomendadas)
 
-Los binarios prediseñados están disponibles para las tres plataformas principales desde [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest):
+Los binarios prediseñados están disponibles para las tres plataformas principales desde [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest):
 
 | Plataforma | Descargar | Requisitos |
 |----------|----------|--------------|

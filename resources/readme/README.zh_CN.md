@@ -14,18 +14,27 @@
 
 ---
 
-### **从 [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)** 下载独立版本
+### **从 [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest)** 下载独立版本
 
 ---
 
 </div>
 <div align="center">
 
-> **⚠️ 已停止维护** — Palworld Save Tools 的最终版本为 2.4.5。该项目已经过时且不再维护。
-> 后续开发将在 **PalStudio**（原 Palworld Save Pal）中继续。
-> Website: https://palworldsavepal.app/ · Discord: https://discord.gg/YWZFPy9G8J · Nexus: https://www.nexusmods.com/palworld/mods/1827
+## ⚠️ Palworld Save Tools — 已停止维护
 
+**最终版本为 2.4.5。** 该项目已经过时，且由于 Palworld 已更新到该版本无法支持的程度，部分功能已经失效，因此不再推荐继续使用。
 
+项目最初由 **Pylar** 发起，但他因故无法继续，从此转向了其他方向。PST 已并入继任工具 **PalStudio**（原 Palworld Save Pal），它将 PST 与 Palworld Save Pal 合并为一款现代化且持续维护的工具。
+
+这套过时的代码以遗留项目的形态保留在 [PalworldSaveTools-Legacy](https://github.com/CyrixJD115/PalworldSaveTools-Legacy)，由最初是 Pylar 合作伙伴的 **Cyrix** 接手，将其作为一份过时的存档保管，如今充当学习存档编辑原理的参考资料。PalStudio 依然是更好的选择。
+
+**开发仍在继续的地方 — PalStudio：**
+- **网站：** https://palworldsavepal.app/
+- **Discord：** https://discord.gg/YWZFPy9G8J
+- **Nexus Mods：** https://www.nexusmods.com/palworld/mods/1827
+
+*感谢所有使用和支持过 Palworld Save Tools 的人。我们 PalStudio 的 Discord 见。*
 
 ## 概述
 
@@ -224,7 +233,7 @@ Palworld Save Tools（PST）是一款快速的一体化桌面应用程序，用�
 
 ### 独立构建（推荐）
 
-预构建的二进制文件适用于 [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest) 的所有三个主要平台：
+预构建的二进制文件适用于 [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest) 的所有三个主要平台：
 
 |平台|下载 |要求|
 |----------|----------|--------------|

@@ -14,18 +14,27 @@
 
 ---
 
-### **スタンドアロン バージョンを [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)** からダウンロードします
+### **スタンドアロン バージョンを [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest)** からダウンロードします
 
 ---
 
 </div>
 <div align="center">
 
-> **⚠️ 開発終了** — Palworld Save Tools の最終版は 2.4.5 です。このプロジェクトは陳腐化しており、今後はメンテナンスされません。
-> 開発は **PalStudio**（旧 Palworld Save Pal）で継続されています。
-> Website: https://palworldsavepal.app/ · Discord: https://discord.gg/YWZFPy9G8J · Nexus: https://www.nexusmods.com/palworld/mods/1827
+## ⚠️ Palworld Save Tools — 開発終了
 
+**最終版は 2.4.5 です。** このプロジェクトは陳腐化しており、Palworld がこのバージョンのサポート範囲を超えて進化したため、一部の機能は動作しなくなっています。継続利用は推奨されません。
 
+元々は **Pylar** 氏によって立ち上げられましたが、事情が重なり、彼はすでに別の道へ進んでいます。PST は後継ツール **PalStudio**（旧 Palworld Save Pal）に統合され、PST と Palworld Save Pal を一つの現代的で維持管理されたツールにまとめました。
+
+古いコードベースはレガシープロジェクト [PalworldSaveTools-Legacy](https://github.com/CyrixJD115/PalworldSaveTools-Legacy) として、Pylar 氏のかつてのパートナーである **Cyrix** 氏のもとで存続しています。彼がこれを引き継ぎ、セーブ編集の仕組みを学ぶための教材として、陳腐化したアーカイブとして保管しています。それでも PalStudio の方が良い選択肢です。
+
+**開発が続く場所 — PalStudio:**
+- **ウェブサイト：** https://palworldsavepal.app/
+- **Discord：** https://discord.gg/YWZFPy9G8J
+- **Nexus Mods：** https://www.nexusmods.com/palworld/mods/1827
+
+*Palworld Save Tools を利用し、支えてくださったすべての皆さんに感謝します。PalStudio の Discord でお会いしましょう。*
 
 ## 概要
 
@@ -224,7 +233,7 @@ Palworld Save Tools (PST) は、Palworld セーブ ファイルを検査およ�
 
 ### スタンドアロン ビルド (推奨)
 
-事前に構築されたバイナリは、[GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest) 以降の 3 つの主要なプラットフォームすべてで利用できます。
+事前に構築されたバイナリは、[GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest) 以降の 3 つの主要なプラットフォームすべてで利用できます。
 
 |プラットフォーム |ダウンロード |要件 |
 |----------|----------|--------------|

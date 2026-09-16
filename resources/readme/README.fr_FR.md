@@ -14,18 +14,27 @@
 
 ---
 
-### **Téléchargez la version autonome depuis [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)** 
+### **Téléchargez la version autonome depuis [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest)** 
 
 ---
 
 </div>
 <div align="center">
 
-> **⚠️ ABANDONNÉ** — La version 2.4.5 est la dernière version de Palworld Save Tools. Le projet est obsolète et n'est plus maintenu.
-> Le développement se poursuit dans **PalStudio** (anciennement Palworld Save Pal).
-> Website: https://palworldsavepal.app/ · Discord: https://discord.gg/YWZFPy9G8J · Nexus: https://www.nexusmods.com/palworld/mods/1827
+## ⚠️ Palworld Save Tools — Abandonné
 
+**La version 2.4.5 est la dernière version.** Le projet est obsolète et plusieurs fonctionnalités sont cassées car Palworld a dépassé ce que cette version prend en charge. Il n'est plus recommandé de l'utiliser.
 
+Il a été lancé à l'origine par **Pylar**, mais des imprévus lui sont arrivés et il est depuis passé à autre chose. PST a été fusionné dans la boîte à outils successorale **PalStudio** (anciennement Palworld Save Pal), qui combine PST et Palworld Save Pal en un outil moderne et maintenu.
+
+Le code obsolète perdure comme projet hérité sur [PalworldSaveTools-Legacy](https://github.com/CyrixJD115/PalworldSaveTools-Legacy), sous **Cyrix**, à l'origine co-associé de Pylar, qui l'a repris et le conserve comme archive obsolète servant aujourd'hui de ressource pédagogique pour comprendre le fonctionnement de l'édition de sauvegardes. PalStudio reste la meilleure option.
+
+**Où le développement continue — PalStudio :**
+- **Site web :** https://palworldsavepal.app/
+- **Discord :** https://discord.gg/YWZFPy9G8J
+- **Nexus Mods :** https://www.nexusmods.com/palworld/mods/1827
+
+*Merci à tous ceux qui ont utilisé et soutenu Palworld Save Tools. On se retrouve sur le Discord de PalStudio.*
 
 ## Aperçu
 
@@ -224,7 +233,7 @@ Accessibles via **Menu → Fonctions**, ces opérations de niveau serveur inclue
 
 ### Builds autonomes (recommandées)
 
-Des binaires prédéfinis sont disponibles pour les trois principales plates-formes à partir de [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest) :
+Des binaires prédéfinis sont disponibles pour les trois principales plates-formes à partir de [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest) :
 
 | Plateforme | Télécharger | Exigences |
 |--------------|----------|--------------|
