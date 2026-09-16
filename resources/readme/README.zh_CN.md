@@ -21,6 +21,12 @@
 </div>
 <div align="center">
 
+> **⚠️ 已停止维护** — Palworld Save Tools 的最终版本为 2.4.5。该项目已经过时且不再维护。
+> 后续开发将在 **PalStudio**（原 Palworld Save Pal）中继续。
+> Website: https://palworldsavepal.app/ · Discord: https://discord.gg/YWZFPy9G8J · Nexus: https://www.nexusmods.com/palworld/mods/1827
+
+
+
 ## 概述
 
 <img src="https://readme-typing-svg.demolab.com?lines=%E8%BF%99%E4%B8%9C%E8%A5%BF%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F;%E4%BD%A0%E7%9A%84%E6%8B%AF%E6%95%91%EF%BC%8C%E4%BD%A0%E7%9A%84%E6%96%B9%E5%BC%8F;%E4%B8%80%E7%A7%8D%E5%B7%A5%E5%85%B7%E5%8D%B3%E5%8F%AF%E7%BB%9F%E6%B2%BB%E4%B8%80%E5%88%87&center=true&width=490&height=28&font=monospace&size=22&color=7DD3FC&vCenter=true" alt="" />

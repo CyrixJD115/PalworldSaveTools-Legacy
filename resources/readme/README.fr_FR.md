@@ -21,6 +21,12 @@
 </div>
 <div align="center">
 
+> **⚠️ ABANDONNÉ** — La version 2.4.5 est la dernière version de Palworld Save Tools. Le projet est obsolète et n'est plus maintenu.
+> Le développement se poursuit dans **PalStudio** (anciennement Palworld Save Pal).
+> Website: https://palworldsavepal.app/ · Discord: https://discord.gg/YWZFPy9G8J · Nexus: https://www.nexusmods.com/palworld/mods/1827
+
+
+
 ## Aperçu
 
 <img src="https://readme-typing-svg.demolab.com?lines=C%27est+quoi+exactement+cette+chose+%3F;Votre+sauvegarde%2C+%C3%A0+votre+fa%C3%A7on;Un+outil+pour+les+gouverner+tous&center=true&width=490&height=28&font=monospace&size=22&color=7DD3FC&vCenter=true" alt="" />
