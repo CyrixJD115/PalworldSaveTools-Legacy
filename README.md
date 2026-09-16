@@ -6,8 +6,6 @@
 
 **A complete solution for managing, editing, converting, and optimizing Palworld save files.**
 
-[![Downloads](https://img.shields.io/github/downloads/CyrixJD115/PalworldSaveTools-Legacy/total)](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)
-[![Latest Release](https://img.shields.io/github/v/release/CyrixJD115/PalworldSaveTools-Legacy?label=Latest%20Release)](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)
 [![License](https://img.shields.io/github/license/CyrixJD115/PalworldSaveTools-Legacy)](license)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue)](https://www.python.org/)
 [![NexusMods](https://img.shields.io/badge/NexusMods-Download-orange)](https://www.nexusmods.com/palworld/mods/3190)

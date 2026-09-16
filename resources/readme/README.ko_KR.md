@@ -6,7 +6,6 @@
 
 **Palworld를 위한 포괄적인 저장 파일 편집 툴킷**
 
-[![Downloads](https://img.shields.io/github/downloads/CyrixJD115/PalworldSaveTools-Legacy/total)](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)
 [![License](https://img.shields.io/github/license/CyrixJD115/PalworldSaveTools-Legacy)](LICENSE)
 [![Discord](https://img.shields.io/badge/Discord-Join_for_support-blue)](https://discord.gg/YWZFPy9G8J)
 [![NexusMods](https://img.shields.io/badge/NexusMods-Download-orange)](https://www.nexusmods.com/palworld/mods/3190)

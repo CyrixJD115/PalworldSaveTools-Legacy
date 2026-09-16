@@ -6,7 +6,6 @@
 
 **Palworld 的综合存档文件编辑工具包**
 
-[![Downloads](https://img.shields.io/github/downloads/CyrixJD115/PalworldSaveTools-Legacy/total)](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)
 [![License](https://img.shields.io/github/license/CyrixJD115/PalworldSaveTools-Legacy)](../../license)
 [![Discord](https://img.shields.io/badge/Discord-Join_for_support-blue)](https://discord.gg/YWZFPy9G8J)
 [![NexusMods](https://img.shields.io/badge/NexusMods-Download-orange)](https://www.nexusmods.com/palworld/mods/3190)
