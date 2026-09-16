@@ -10,7 +10,7 @@
        ${GAME_VERSION}    e.g. 1.0.0
        ${REPO_URL}        https://github.com/<owner>/<repo>
        ${RELEASE_URL}     direct link to this release's tag
-       ${DISCORD_URL}     https://discord.gg/sYcZwcT4cT
+       ${DISCORD_URL}     https://discord.gg/YWZFPy9G8J
        ${NEXUS_URL}       Nexus Mods mod page
         __CHANGELOG_ENTRY__ replaced from changelogs.md for this version
         Uses __CHANGELOG_ENTRY__ as a literal marker for multiline insertion.

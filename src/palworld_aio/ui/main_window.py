@@ -8,7 +8,7 @@ import sys
 from functools import partial
 import logging
 from PySide6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QFrame, QMenuBar, QMenu, QStatusBar, QSplitter, QMessageBox, QFileDialog, QInputDialog, QDialog, QComboBox, QApplication, QStackedWidget, QTextEdit, QLineEdit
-from PySide6.QtCore import Qt, QTimer, Signal, QObject, QPoint, QPropertyAnimation, QEasingCurve, QByteArray, QThread
+from PySide6.QtCore import Qt, QTimer, Signal, QObject, QPoint, QPropertyAnimation, QEasingCurve, QByteArray
 
 from PySide6.QtGui import QIcon, QFont, QAction, QPixmap, QCloseEvent, QTextCursor
 from i18n import t, set_language, load_resources, get_native_lang_name
@@ -16,8 +16,8 @@ from common import get_versions, get_current_version, get_display_version, is_st
 from import_libs import run_with_loading
 from loading_manager import show_question
 from .tabs.tools_tab import center_on_parent, DropOverlay
-GITHUB_LATEST_ZIP = 'https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest'
 from palworld_aio import constants
+GITHUB_PAGE_URL = constants.GITHUB_URL
 from palworld_aio.ui.chrome.styles import ThemeManager, MENU_STYLE, DIALOG_STYLE as DARK_THEME_STYLE
 from palworld_aio.widgets.toggle_check import ToggleCheckBtn
 from palworld_aio.utils import as_uuid
@@ -181,39 +181,6 @@ class StatusBarStream(QObject):
             self.detach_window = None
     def __getattr__(self, name):
         return getattr(self.stringio, name)
-class UpdateChecker(QThread):
-    update_checked = Signal(bool, object, object)
-    def __init__(self, force_test=False, branch=None):
-        super().__init__()
-        self.force_test = force_test
-        self.branch = branch or 'stable'
-    def run(self):
-        try:
-            import ssl, json
-            context = ssl.create_default_context()
-            req = urllib.request.Request(
-                'https://api.github.com/repos/deafdudecomputers/PalworldSaveTools/releases/latest',
-                headers={
-                    'User-Agent': 'PalworldSaveTools/2.0',
-                    'Accept': 'application/vnd.github.v3+json',
-                },
-            )
-            with urllib.request.urlopen(req, timeout=10, context=context) as r:
-                data = json.loads(r.read().decode('utf-8'))
-            tag = data.get('tag_name', '') or ''
-            latest = tag.lstrip('v') or None
-            local, _ = get_versions()
-            available = False
-            if latest:
-                local_tuple = tuple((int(x) for x in local.split('.')))
-                latest_tuple = tuple((int(x) for x in latest.split('.')))
-                available = latest_tuple > local_tuple
-            if self.force_test:
-                available = True
-            self.update_checked.emit(not available, latest, self.branch)
-        except Exception as e:
-            print(f'Update check error: {e}')
-            self.update_checked.emit(True, None, None)
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -229,7 +196,6 @@ class MainWindow(QMainWindow):
         self.sidebar.set_active('tools')
         self._setup_menus()
         self._setup_connections()
-        QTimer.singleShot(0, self._check_update)
         self.status_stream = StatusBarStream(self.status_bar, self)
         self.status_stream.detach_state_changed.connect(self._on_detach_state_changed)
         sys.stdout = self.status_stream
@@ -480,7 +446,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.excl_bases_panel)
         self.stacked_widget.addWidget(exclusions_tab)
     def _setup_menus(self):
-        menu_actions = {'file': [(t('menu.file.load_save') if t else 'Load Save', self._load_save), (t('menu.file.load_xgp_save') if t else 'Load GamePass Save', self._load_xgp_save), (t('menu.file.load_backup') if t else 'Load from Backup', self._load_backup_save), (t('menu.file.load_gps') if t else 'Load Global Pal Storage', self._load_gps), (t('menu.file.load_worldoption') if t else 'Load WorldOption', self._load_worldoption), (t('menu.file.save_changes') if t else 'Save Changes', self._save_changes), (t('menu.file.rename_world') if t else 'Rename World', self._rename_world), (t('aio.menu.open_data_folder') if t else 'Open Data Folder', self._open_data_folder)], 'functions': [(t('deletion.menu.submenu.delete') if t else 'Delete', [(t('deletion.menu.delete_empty_guilds') if t else 'Delete Empty Guilds', self._delete_empty_guilds), (t('deletion.menu.delete_inactive_bases') if t else 'Delete Inactive Bases', self._delete_inactive_bases), (t('deletion.menu.delete_duplicate_players') if t else 'Delete Duplicate Players', self._delete_duplicate_players), (t('deletion.menu.delete_inactive_players') if t else 'Delete Inactive Players', self._delete_inactive_players), (t('deletion.menu.delete_unreferenced') if t else 'Delete Unreferenced Data', self._delete_unreferenced), (t('deletion.menu.delete_non_base_map_objs') if t else 'Delete Non-Base Map Objects', self._delete_non_base_map_objs), (t('deletion.menu.delete_all_skins') if t else 'Delete All Skins', self._delete_all_skins), (t('deletion.menu.delete_invalid_items') if t else 'Delete Invalid Items', self._remove_invalid_items), (t('deletion.menu.delete_invalid_structures') if t else 'Delete Invalid Structures', self._remove_invalid_structures), (t('deletion.menu.delete_imported_pals') if t else 'Delete Imported Pals', self._delete_imported_pals), (t('deletion.menu.delete_invalid_pals') if t else 'Delete Invalid Pals', self._remove_invalid_pals), (t('deletion.menu.delete_invalid_passives') if t else 'Delete Invalid Passives', self._remove_invalid_passives)]), (t('deletion.menu.submenu.fix') if t else 'Fix', [(t('deletion.menu.fix_structures') if t else 'Fix All Structures', self._repair_structures), (t('deletion.menu.fix_items') if t else 'Fix All Items', self._repair_items), (t('deletion.menu.fix_all_pals') if t else 'Fix All Pals', self._fix_all_pals), (t('deletion.menu.fix_illegal_pals') if t else 'Fix Illegal Pals', self._fix_illegal_pals), (t('deletion.menu.fix_illegal_players') if t else 'Fix Illegal Players', self._fix_illegal_players), (t('deletion.menu.fix_invalid_active_skills') if t else 'Fix Invalid Active Skills', self._fix_invalid_active_skills), (t('deletion.menu.fix_timestamps') if t else 'Fix All Negative Timestamps', self._fix_all_timestamps), (t('deletion.menu.fix_overfilled_inventories') if t else 'Fix Container Sizes', self._trim_overfilled_inventories), (t('deletion.menu.fix_all_guilds') if t else 'Fix All Guilds', self._rebuild_all_guilds)]), (t('deletion.menu.submenu.reset') if t else 'Reset', [(t('deletion.menu.reset_missions') if t else 'Reset Missions', self._reset_missions), (t('deletion.menu.reset_anti_air') if t else 'Reset Anti-Air Turrets', self._reset_anti_air), (t('deletion.menu.reset_oilrig') if t else 'Reset Oil Rigs', self._reset_oilrig), (t('deletion.menu.reset_invader') if t else 'Reset Invaders', self._reset_invader), (t('deletion.menu.reset_supply') if t else 'Reset Supply', self._reset_supply), (t('deletion.menu.reset_dungeons') if t else 'Reset Dungeons', self._reset_dungeons), (t('deletion.menu.reset_lock_gimmick') if t else 'Reset Mini Game Towers', self._reset_lock_gimmick)]), (t('deletion.menu.submenu.misc') if t else 'Misc', [(t('deletion.menu.unlock_private_chests') if t else 'Unlock Private Chests', self._unlock_private_chests), (t('deletion.menu.max_all_pals') if t else 'Max All Pals', self._max_all_pals), (t('deletion.menu.paldefender') if t else 'PalDefender Commands', self._open_paldefender),         (t('base.export_all') if t else 'Export All Bases', self._export_all_bases), (t('modify_container_slots') if t else 'Modify Container Slots', self._modify_container_slots), (t('deletion.menu.modify_all_player_slots') if t else 'Modify All Player Slots', self._modify_all_player_slots), (t('deletion.menu.modify_all_guild_chest_slots') if t else 'Modify All Guild Chest Slots', self._modify_all_guild_chest_slots), (t('gamedays.menu') if t else 'Edit Game Days', self._edit_game_days)])], 'configs': [(t('loading.mode.submenu') if t else 'Loading Screen Configs', [(t('loading.mode.show') if t else 'Show Loading Screen', partial(self._set_loading_screen_mode, 'overlay')), (t('loading.mode.hide') if t else 'Hide Loading Screen', partial(self._set_loading_screen_mode, 'header'))]), (t('pal_name_settings.title') if t else 'Pal Name Settings', self._open_pal_name_settings), (t('update.disable_check') if t else 'Disable Update Check', self._toggle_update_check)], 'maps': [(t('deletion.menu.show_map') if t else 'Show Map', self._show_map), (t('deletion.menu.generate_map') if t else 'Generate Map', self._generate_map)], 'exclusions': [(t('deletion.menu.save_exclusions') if t else 'Save Exclusions', self._save_exclusions)], 'languages': [(get_native_lang_name(code), partial(self._change_language, code), {'en_US': '🇺🇸', 'zh_CN': '🇨🇳', 'ru_RU': '🇷🇺', 'fr_FR': '🇫🇷', 'es_ES': '🇪🇸', 'de_DE': '🇩🇪', 'ja_JP': '🇯🇵', 'ko_KR': '🇰🇷', 'pt_BR': '🇧🇷', 'pt_PT': '🇵🇹'}[code]) for code in ['en_US', 'zh_CN', 'ru_RU', 'fr_FR', 'es_ES', 'de_DE', 'ja_JP', 'ko_KR', 'pt_BR', 'pt_PT']]}
+        menu_actions = {'file': [(t('menu.file.load_save') if t else 'Load Save', self._load_save), (t('menu.file.load_xgp_save') if t else 'Load GamePass Save', self._load_xgp_save), (t('menu.file.load_backup') if t else 'Load from Backup', self._load_backup_save), (t('menu.file.load_gps') if t else 'Load Global Pal Storage', self._load_gps), (t('menu.file.load_worldoption') if t else 'Load WorldOption', self._load_worldoption), (t('menu.file.save_changes') if t else 'Save Changes', self._save_changes), (t('menu.file.rename_world') if t else 'Rename World', self._rename_world), (t('aio.menu.open_data_folder') if t else 'Open Data Folder', self._open_data_folder)], 'functions': [(t('deletion.menu.submenu.delete') if t else 'Delete', [(t('deletion.menu.delete_empty_guilds') if t else 'Delete Empty Guilds', self._delete_empty_guilds), (t('deletion.menu.delete_inactive_bases') if t else 'Delete Inactive Bases', self._delete_inactive_bases), (t('deletion.menu.delete_duplicate_players') if t else 'Delete Duplicate Players', self._delete_duplicate_players), (t('deletion.menu.delete_inactive_players') if t else 'Delete Inactive Players', self._delete_inactive_players), (t('deletion.menu.delete_unreferenced') if t else 'Delete Unreferenced Data', self._delete_unreferenced), (t('deletion.menu.delete_non_base_map_objs') if t else 'Delete Non-Base Map Objects', self._delete_non_base_map_objs), (t('deletion.menu.delete_all_skins') if t else 'Delete All Skins', self._delete_all_skins), (t('deletion.menu.delete_invalid_items') if t else 'Delete Invalid Items', self._remove_invalid_items), (t('deletion.menu.delete_invalid_structures') if t else 'Delete Invalid Structures', self._remove_invalid_structures), (t('deletion.menu.delete_imported_pals') if t else 'Delete Imported Pals', self._delete_imported_pals), (t('deletion.menu.delete_invalid_pals') if t else 'Delete Invalid Pals', self._remove_invalid_pals), (t('deletion.menu.delete_invalid_passives') if t else 'Delete Invalid Passives', self._remove_invalid_passives)]), (t('deletion.menu.submenu.fix') if t else 'Fix', [(t('deletion.menu.fix_structures') if t else 'Fix All Structures', self._repair_structures), (t('deletion.menu.fix_items') if t else 'Fix All Items', self._repair_items), (t('deletion.menu.fix_all_pals') if t else 'Fix All Pals', self._fix_all_pals), (t('deletion.menu.fix_illegal_pals') if t else 'Fix Illegal Pals', self._fix_illegal_pals), (t('deletion.menu.fix_illegal_players') if t else 'Fix Illegal Players', self._fix_illegal_players), (t('deletion.menu.fix_invalid_active_skills') if t else 'Fix Invalid Active Skills', self._fix_invalid_active_skills), (t('deletion.menu.fix_timestamps') if t else 'Fix All Negative Timestamps', self._fix_all_timestamps), (t('deletion.menu.fix_overfilled_inventories') if t else 'Fix Container Sizes', self._trim_overfilled_inventories), (t('deletion.menu.fix_all_guilds') if t else 'Fix All Guilds', self._rebuild_all_guilds)]), (t('deletion.menu.submenu.reset') if t else 'Reset', [(t('deletion.menu.reset_missions') if t else 'Reset Missions', self._reset_missions), (t('deletion.menu.reset_anti_air') if t else 'Reset Anti-Air Turrets', self._reset_anti_air), (t('deletion.menu.reset_oilrig') if t else 'Reset Oil Rigs', self._reset_oilrig), (t('deletion.menu.reset_invader') if t else 'Reset Invaders', self._reset_invader), (t('deletion.menu.reset_supply') if t else 'Reset Supply', self._reset_supply), (t('deletion.menu.reset_dungeons') if t else 'Reset Dungeons', self._reset_dungeons), (t('deletion.menu.reset_lock_gimmick') if t else 'Reset Mini Game Towers', self._reset_lock_gimmick)]), (t('deletion.menu.submenu.misc') if t else 'Misc', [(t('deletion.menu.unlock_private_chests') if t else 'Unlock Private Chests', self._unlock_private_chests), (t('deletion.menu.max_all_pals') if t else 'Max All Pals', self._max_all_pals), (t('deletion.menu.paldefender') if t else 'PalDefender Commands', self._open_paldefender),         (t('base.export_all') if t else 'Export All Bases', self._export_all_bases), (t('modify_container_slots') if t else 'Modify Container Slots', self._modify_container_slots), (t('deletion.menu.modify_all_player_slots') if t else 'Modify All Player Slots', self._modify_all_player_slots), (t('deletion.menu.modify_all_guild_chest_slots') if t else 'Modify All Guild Chest Slots', self._modify_all_guild_chest_slots), (t('gamedays.menu') if t else 'Edit Game Days', self._edit_game_days)])], 'configs': [(t('loading.mode.submenu') if t else 'Loading Screen Configs', [(t('loading.mode.show') if t else 'Show Loading Screen', partial(self._set_loading_screen_mode, 'overlay')), (t('loading.mode.hide') if t else 'Hide Loading Screen', partial(self._set_loading_screen_mode, 'header'))]), (t('pal_name_settings.title') if t else 'Pal Name Settings', self._open_pal_name_settings)], 'maps': [(t('deletion.menu.show_map') if t else 'Show Map', self._show_map), (t('deletion.menu.generate_map') if t else 'Generate Map', self._generate_map)], 'exclusions': [(t('deletion.menu.save_exclusions') if t else 'Save Exclusions', self._save_exclusions)], 'languages': [(get_native_lang_name(code), partial(self._change_language, code), {'en_US': '🇺🇸', 'zh_CN': '🇨🇳', 'ru_RU': '🇷🇺', 'fr_FR': '🇫🇷', 'es_ES': '🇪🇸', 'de_DE': '🇩🇪', 'ja_JP': '🇯🇵', 'ko_KR': '🇰🇷', 'pt_BR': '🇧🇷', 'pt_PT': '🇵🇹'}[code]) for code in ['en_US', 'zh_CN', 'ru_RU', 'fr_FR', 'es_ES', 'de_DE', 'ja_JP', 'ko_KR', 'pt_BR', 'pt_PT']]}
         self.header_widget.set_menu_actions(menu_actions)
     def _open_data_folder(self):
         from resource_resolver import get_user_config_dir
@@ -541,7 +507,7 @@ class MainWindow(QMainWindow):
         user_cfg_path = str(USER_CONFIG_DIR / 'user.cfg')
         if not os.path.exists(user_cfg_path):
             user_cfg_path = os.path.join(str(CONFIG_DIR), 'user.cfg')
-        default_settings = {'language': 'en_US', 'show_icons': True, 'boot_preference': 'menu', 'console_detached': False, 'console_window_geometry': None, 'right_panel_visible': True, 'sidebar_collapsed': False, 'loading_screen_mode': 'overlay', 'disable_update_check': False}
+        default_settings = {'language': 'en_US', 'show_icons': True, 'boot_preference': 'menu', 'console_detached': False, 'console_window_geometry': None, 'right_panel_visible': True, 'sidebar_collapsed': False, 'loading_screen_mode': 'overlay'}
         if os.path.exists(user_cfg_path):
             try:
                 self.user_settings = json_tools.load(user_cfg_path)
@@ -563,7 +529,6 @@ class MainWindow(QMainWindow):
         user_cfg_path = str(USER_CONFIG_DIR / 'user.cfg')
         self.user_settings['pal_creation_name_mode'] = constants.pal_creation_name_mode
         self.user_settings['bulk_sync_apply_nickname'] = constants.bulk_sync_apply_nickname
-        self.user_settings['disable_update_check'] = self.user_settings.get('disable_update_check', False)
         try:
             os.makedirs(os.path.dirname(user_cfg_path), exist_ok=True)
             json_tools.dump(self.user_settings, user_cfg_path, indent=2)
@@ -602,33 +567,10 @@ class MainWindow(QMainWindow):
         self._save_user_settings()
     def _on_detach_state_changed(self, detached):
         self.sidebar.set_console_visible(detached)
-    def _check_update(self):
-        if self.user_settings.get('disable_update_check', False):
-            return
-        self.update_checker = UpdateChecker()
-        self.update_checker.update_checked.connect(self._on_update_checked)
-        self.update_checker.start()
-    def _on_update_checked(self, ok, latest, branch):
-        try:
-            if not ok and latest:
-                tools_version = get_display_version()
-                self.header_widget.start_pulse_animation(latest)
-                self.header_widget.update_version_text(tools_version, latest)
-                branch_text = f' ({branch})' if branch else ''
-                self.status_bar.showMessage(f"{(t('update.current') if t else 'Current')}: {tools_version}{branch_text} | {(t('update.latest') if t else 'Latest')}: {latest} - Click version chip to update", 0)
-            else:
-                self.header_widget.stop_pulse_animation()
-        except Exception as e:
-            print(f'Update check callback error: {e}')
     def _lock_ui(self):
         pass
     def _unlock_ui(self):
         pass
-    def _toggle_update_check(self):
-        self.user_settings['disable_update_check'] = not self.user_settings.get('disable_update_check', False)
-        self._save_user_settings()
-        status = 'disabled' if self.user_settings['disable_update_check'] else 'enabled'
-        self._show_info(t('update.check_status.title') if t else 'Update Check', t('update.check_status.message', status=status) if t else f'Update checks {status}. Restart may be required for full effect.')
     def _on_load_finished(self, success):
         if success:
             if 'inventory_tab' in self.__dict__:
@@ -792,7 +734,7 @@ class MainWindow(QMainWindow):
         h2_color = '#4a90e2'
         text_color = '#e0e0e0'
         sub_color = '#888'
-        about_text = f'''<h2 style="color: {h2_color};">{(t('about.title') if t else 'Palworld Save Tools')} v{tools_version}</h2>\n    <p style="color: {text_color};">{(t('about.description') if t else 'A comprehensive toolkit for managing Palworld save files.')}</p>\n    <p style="color: {text_color};"><b>{(t('about.features.label') if t else 'Features')}:</b></p>\n    <ul>\n    <li style="color: {text_color};">{(t('about.features.1') if t else 'Transfer saves between servers and co-op worlds')}</li>\n    <li style="color: {text_color};">{(t('about.features.2') if t else 'Fix host saves and manage player/guild data')}</li>\n    <li style="color: {text_color};">{(t('about.features.3') if t else 'Edit bases and manage save files')}</li>\n    <li style="color: {text_color};">{(t('about.features.4') if t else 'Convert between Steam and GamePass formats')}</li>\n    <li style="color: {text_color};">{(t('about.features.5') if t else 'Visualize and manage world maps')}</li>\n    </ul>\n    <p style="color: {text_color};"><b>{(t('about.game_version') if t else 'Game Version')}:</b> {game_version}</p>\n    <p style="color: {text_color};"><b>{(t('about.developer') if t else 'Developer')}:</b> Palworld Save Tools Team</p>\n    <p style="color: {text_color};"><b>GitHub:</b> <a href="{GITHUB_LATEST_ZIP}" style="color: {h2_color};">{(t('about.github') if t else 'View on GitHub')}</a></p>\n    <p style="color: {sub_color};">© 2026 Palworld Save Tools</p>'''
+        about_text = f'''<h2 style="color: {h2_color};">{(t('about.title') if t else 'Palworld Save Tools')} v{tools_version}</h2>\n    <p style="color: {text_color};">{(t('about.description') if t else 'A comprehensive toolkit for managing Palworld save files.')}</p>\n    <p style="color: {text_color};"><b>{(t('about.features.label') if t else 'Features')}:</b></p>\n    <ul>\n    <li style="color: {text_color};">{(t('about.features.1') if t else 'Transfer saves between servers and co-op worlds')}</li>\n    <li style="color: {text_color};">{(t('about.features.2') if t else 'Fix host saves and manage player/guild data')}</li>\n    <li style="color: {text_color};">{(t('about.features.3') if t else 'Edit bases and manage save files')}</li>\n    <li style="color: {text_color};">{(t('about.features.4') if t else 'Convert between Steam and GamePass formats')}</li>\n    <li style="color: {text_color};">{(t('about.features.5') if t else 'Visualize and manage world maps')}</li>\n    </ul>\n    <p style="color: {text_color};"><b>{(t('about.game_version') if t else 'Game Version')}:</b> {game_version}</p>\n    <p style="color: {text_color};"><b>{(t('about.developer') if t else 'Developer')}:</b> Palworld Save Tools Team</p>\n    <p style="color: {text_color};"><b>GitHub:</b> <a href="{GITHUB_PAGE_URL}" style="color: {h2_color};">{(t('about.github') if t else 'View on GitHub')}</a></p>\n    <p style="color: {sub_color};">© 2026 Palworld Save Tools</p>'''
         msg_box = self._create_message_box(QMessageBox.Information)
         msg_box.setWindowTitle(t('About PST') if t else 'About PST')
         msg_box.setTextFormat(Qt.RichText)

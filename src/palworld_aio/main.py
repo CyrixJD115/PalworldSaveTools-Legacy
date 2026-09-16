@@ -283,6 +283,8 @@ def run_aio():
         'padding: 6px 10px; font-size: 11px; border-radius: 4px; }')
     if os.path.exists(constants.ICON_PATH):
         app.setWindowIcon(QIcon(constants.ICON_PATH))
+    from palworld_aio.notice import show_discontinuation_notice
+    show_discontinuation_notice()
     window = MainWindow()
     center_window(window)
     window.show()

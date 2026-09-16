@@ -6,16 +6,16 @@
 
 **A comprehensive save file editing toolkit for Palworld**
 
-[![Downloads](https://img.shields.io/github/downloads/deafdudecomputers/PalworldSaveTools/total)](https://github.com/deafdudecomputers/PalworldTools/releases/latest)
-[![License](https://img.shields.io/github/license/deafdudecomputers/PalworldSaveTools)](LICENSE)
-[![Discord](https://img.shields.io/badge/Discord-Join_for_support-blue)](https://discord.gg/sYcZwcT4cT)
+[![Downloads](https://img.shields.io/github/downloads/CyrixJD115/PalworldSaveTools-Legacy/total)](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)
+[![License](https://img.shields.io/github/license/CyrixJD115/PalworldSaveTools-Legacy)](LICENSE)
+[![Discord](https://img.shields.io/badge/Discord-Join_for_support-blue)](https://discord.gg/YWZFPy9G8J)
 [![NexusMods](https://img.shields.io/badge/NexusMods-Download-orange)](https://www.nexusmods.com/palworld/mods/3190)
 
 [English](../../README.md) | [简体中文](README.zh_CN.md) | [Deutsch](README.de_DE.md) | [Español](README.es_ES.md) | [Français](README.fr_FR.md) | [Русский](README.ru_RU.md) | [日本語](README.ja_JP.md) | [한국어](README.ko_KR.md) | [Português (Brasil)](README.pt_BR.md) | [Português (Portugal)](README.pt_PT.md)
 
 ---
 
-### **Download the standalone version from [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest)** 
+### **Download the standalone version from [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)** 
 
 ---
 
@@ -222,7 +222,7 @@ Acessíveis via **Menu → Funções**, essas operações de nível de servidor 
 
 ### Construções independentes (recomendado)
 
-Binários pré-construídos estão disponíveis para todas as três plataformas principais de [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest):
+Binários pré-construídos estão disponíveis para todas as três plataformas principais de [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest):
 
 | Plataforma | Baixar | Requisitos |
 |----------|----------|-------------|
@@ -249,7 +249,7 @@ PST usa [`uv`](https://docs.astral.sh/uv/) para gerenciamento de dependências. 
 **Pré-requisitos:** [Python 3.11+](https://www.python.org/) e [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
 ```bash
-git clone https://github.com/deafdudecomputers/PalworldSaveTools.git
+git clone https://github.com/CyrixJD115/PalworldSaveTools-Legacy.git
 cd PalworldSaveTools
 uv run start.py
 ```
@@ -664,8 +664,8 @@ Os desenvolvedores não são responsáveis por qualquer perda de dados salvos ou
 
 </div>
 
-- **Discord:** [Join us for support, base builds, and more!](https://discord.gg/sYcZwcT4cT)
-- Problemas **GitHub:** [Report a bug](https://github.com/deafdudecomputers/PalworldSaveTools/issues)
+- **Discord:** [Join us for support, base builds, and more!](https://discord.gg/YWZFPy9G8J)
+- Problemas **GitHub:** [Report a bug](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/issues)
 - **Modificações Nexus:** [Download & discuss](https://www.nexusmods.com/palworld/mods/3190)
 
 

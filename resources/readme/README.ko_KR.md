@@ -6,16 +6,16 @@
 
 **Palworld를 위한 포괄적인 저장 파일 편집 툴킷**
 
-[![Downloads](https://img.shields.io/github/downloads/deafdudecomputers/PalworldSaveTools/total)](https://github.com/deafdudecomputers/PalworldTools/releases/latest)
-[![License](https://img.shields.io/github/license/deafdudecomputers/PalworldSaveTools)](LICENSE)
-[![Discord](https://img.shields.io/badge/Discord-Join_for_support-blue)](https://discord.gg/sYcZwcT4cT)
+[![Downloads](https://img.shields.io/github/downloads/CyrixJD115/PalworldSaveTools-Legacy/total)](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)
+[![License](https://img.shields.io/github/license/CyrixJD115/PalworldSaveTools-Legacy)](LICENSE)
+[![Discord](https://img.shields.io/badge/Discord-Join_for_support-blue)](https://discord.gg/YWZFPy9G8J)
 [![NexusMods](https://img.shields.io/badge/NexusMods-Download-orange)](https://www.nexusmods.com/palworld/mods/3190)
 
 [English](../../README.md) | [简体中文](README.zh_CN.md) | [Deutsch](README.de_DE.md) | [Español](README.es_ES.md) | [Français](README.fr_FR.md) | [Русский](README.ru_RU.md) | [日本語](README.ja_JP.md) | [한국어](README.ko_KR.md) | [Português (Brasil)](README.pt_BR.md) | [Português (Portugal)](README.pt_PT.md)
 
 ---
 
-### ** [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest)** 에서 독립형 버전을 다운로드하세요
+### ** [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)** 에서 독립형 버전을 다운로드하세요
 
 ---
 
@@ -219,7 +219,7 @@ Palworld Save Tools(PST)는 Palworld 저장 파일을 검사하고 편집하기 
 
 ### 독립형 빌드(권장)
 
-사전 빌드된 바이너리는 [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest)의 세 가지 주요 플랫폼 모두에서 사용할 수 있습니다.
+사전 빌드된 바이너리는 [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)의 세 가지 주요 플랫폼 모두에서 사용할 수 있습니다.
 
 | 플랫폼 | 다운로드 | 요구사항 |
 |------------|------------|-------------|
@@ -246,7 +246,7 @@ PST는 종속성 관리를 위해 [`uv`](https://docs.astral.sh/uv/)을 사용�
 **전제 조건:** [Python 3.11+](https://www.python.org/) 및 [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
 ```bash
-git clone https://github.com/deafdudecomputers/PalworldSaveTools.git
+git clone https://github.com/CyrixJD115/PalworldSaveTools-Legacy.git
 cd PalworldSaveTools
 uv run start.py
 ```
@@ -661,8 +661,8 @@ uv run python build/build_interactively.py
 
 </div>
 
-- **Discord:** [Join us for support, base builds, and more!](https://discord.gg/sYcZwcT4cT)
-- **GitHub 문제:** [Report a bug](https://github.com/deafdudecomputers/PalworldSaveTools/issues)
+- **Discord:** [Join us for support, base builds, and more!](https://discord.gg/YWZFPy9G8J)
+- **GitHub 문제:** [Report a bug](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/issues)
 - **Nexus 모드:** [Download & discuss](https://www.nexusmods.com/palworld/mods/3190)
 
 

@@ -1,5 +1,6 @@
 import os
-from PySide6.QtWidgets import QWidget, QHBoxLayout, QLabel, QSpacerItem, QSizePolicy
+import webbrowser
+from PySide6.QtWidgets import QWidget, QHBoxLayout, QLabel, QSpacerItem, QSizePolicy, QMenu
 from PySide6.QtCore import Qt, Signal, QSize, QPoint, QTimer
 from PySide6.QtGui import QPixmap, QFont, QCursor, QFontDatabase
 try:
@@ -12,6 +13,7 @@ from common import get_versions, get_display_version
 from palworld_aio import constants
 from resource_resolver import resource_path
 from .sidebar_widget import NerdBtn, NerdLabel
+from .styles import MENU_STYLE
 class HeaderWidget(QWidget):
     minimize_clicked = Signal()
     maximize_clicked = Signal()
@@ -147,6 +149,15 @@ class HeaderWidget(QWidget):
         self._loading_btn.setFont(QFont(constants.FONT_FAMILY_NERD, 16))
         self._loading_btn.setVisible(False)
         layout.addWidget(self._loading_btn)
+        self.palstudio_btn = NerdBtn('PalStudio')
+        self.palstudio_btn.setObjectName('palstudioChip')
+        self.palstudio_btn.setFixedSize(90, 36)
+        self.palstudio_btn.setStyleSheet(btn_style)
+        self.palstudio_btn.setToolTip(t('palstudio.tooltip') if t else 'PalStudio Links')
+        self.palstudio_btn.setFont(QFont(constants.FONT_FAMILY, 11))
+        self.palstudio_btn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.palstudio_btn.clicked.connect(self._show_palstudio_menu)
+        layout.addWidget(self.palstudio_btn)
         self.discord_btn = NerdBtn(nf.icons['nf-fa-discord'])
         self.discord_btn.setObjectName('discordChip')
         self.discord_btn.setFixedSize(40, 36)
@@ -190,12 +201,26 @@ class HeaderWidget(QWidget):
         self._open_stable()
     def _open_stable(self):
         import webbrowser
-        webbrowser.open('https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest')
+        webbrowser.open(constants.GITHUB_URL)
     def _open_github(self, event):
         self._open_stable()
     def _open_discord(self):
-        import webbrowser
-        webbrowser.open('https://discord.gg/sYcZwcT4cT')
+        webbrowser.open(constants.PALSTUDIO_DISCORD_URL)
+    def _show_palstudio_menu(self):
+        menu = self._build_palstudio_menu()
+        menu.exec(self.palstudio_btn.mapToGlobal(QPoint(0, self.palstudio_btn.height())))
+    def _build_palstudio_menu(self):
+        menu = QMenu(self)
+        menu.setStyleSheet(MENU_STYLE)
+        for label, url in [
+            (t('palstudio.website') if t else 'Website', constants.PALSTUDIO_SITE_URL),
+            (t('palstudio.discord') if t else 'Discord', constants.PALSTUDIO_DISCORD_URL),
+            (t('palstudio.nexus') if t else 'Nexus Mods', constants.PALSTUDIO_NEXUS_URL),
+        ]:
+            action = menu.addAction(label)
+            action.setData(url)
+            action.triggered.connect(lambda checked=False, u=url: webbrowser.open(u))
+        return menu
     def update_logo(self):
         base_path = constants.get_base_path()
         logo_candidates = ['logo.png', 'PalworldSaveTools_Blue.png', 'PST.png']

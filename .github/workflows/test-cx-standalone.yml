@@ -57,7 +57,7 @@ jobs:
           GAME_VERSION: ${{ steps.env.outputs.game_version }}
           REPO_URL: https://github.com/${{ github.repository }}
           RELEASE_URL: https://github.com/${{ github.repository }}/releases/tag/cx-test-${{ steps.env.outputs.version }}
-          DISCORD_URL: https://discord.gg/sYcZwcT4cT
+          DISCORD_URL: https://discord.gg/YWZFPy9G8J
           NEXUS_URL: ${{ vars.NEXUS_MOD_URL || 'https://www.nexusmods.com/palworld/mods/3190' }}
         run: |
           envsubst < .github/templates/release_notes.md > /tmp/notes_partial.md

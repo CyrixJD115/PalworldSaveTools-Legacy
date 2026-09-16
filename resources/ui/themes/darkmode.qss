@@ -115,6 +115,23 @@ QPushButton#discordChip:pressed {
     background: rgba(88,101,242,0.3);
 }
 
+/* PalStudio chip */
+QPushButton#palstudioChip {
+    border: 1px solid rgba(74,144,226,0.4);
+    background: rgba(74,144,226,0.1);
+    border-radius: 10px;
+    padding: 0px;
+    color: #7CB8F0;
+}
+QPushButton#palstudioChip:hover {
+    background: rgba(74,144,226,0.2);
+    border-color: rgba(74,144,226,0.6);
+    color: #A5CFF7;
+}
+QPushButton#palstudioChip:pressed {
+    background: rgba(74,144,226,0.3);
+}
+
 /* Scroll area */
 QScrollArea {
     border-radius: 10px;

@@ -1,3 +1,8 @@
+#2.4.5
+- **Discontinuation notice before the tool opens** — starting PST now shows a short notice first, explaining that version 2.4.5 is the final release, that development continues in PalStudio, and where to find the PalStudio Discord, Nexus page and website. The links are built into the notice itself, Press OK to continue into the main window, and "Don't show again" turns it off for good.
+- **Final release: no more update checks, links move to the Legacy fork** — version 2.4.5 is announced through the original project so everyone on 2.4.4 sees this last update; the 2.4.5 build itself no longer checks for updates, since this is the final release. The version chip, all GitHub links and the READMEs now point to the PalworldSaveTools-Legacy fork, the Discord button opens the PalStudio server, and the notice introduces PalStudio (formerly Palworld Save Pal).
+- Bumped version to 2.4.5
+
 #2.4.4
 - **Equipment slots now unlock the slot you clicked** — clicking a locked Food, Accessory or Weapon slot now unlocks the exact slot you clicked instead of always the next one in line. Clicking Food 5 with only slot 1 unlocked now adds only AutoMealPouch Tier 5 to unlock Food 5 alone, leaving other slots as they were, and the same per-slot unlocking now applies to accessory and weapon slots.
 - **DPS bulk actions now work on every selected pal** — using Select All in DPS and then Delete, All Skills, Max, Heal, Rename or feeding food only affected one pal even when hundreds or thousands were selected. All of those bulk actions now correctly apply to every pal you selected.

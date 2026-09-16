@@ -6,16 +6,16 @@
 
 **Комплексный набор инструментов для редактирования файлов сохранений Palworld**
 
-[![Downloads](https://img.shields.io/github/downloads/deafdudecomputers/PalworldSaveTools/total)](https://github.com/deafdudecomputers/PalworldTools/releases/latest)
-[![License](https://img.shields.io/github/license/deafdudecomputers/PalworldSaveTools)](LICENSE)
-[![Discord](https://img.shields.io/badge/Discord-Join_for_support-blue)](https://discord.gg/sYcZwcT4cT)
+[![Downloads](https://img.shields.io/github/downloads/CyrixJD115/PalworldSaveTools-Legacy/total)](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)
+[![License](https://img.shields.io/github/license/CyrixJD115/PalworldSaveTools-Legacy)](LICENSE)
+[![Discord](https://img.shields.io/badge/Discord-Join_for_support-blue)](https://discord.gg/YWZFPy9G8J)
 [![NexusMods](https://img.shields.io/badge/NexusMods-Download-orange)](https://www.nexusmods.com/palworld/mods/3190)
 
 [English](../../README.md) | [简体中文](README.zh_CN.md) | [Deutsch](README.de_DE.md) | [Español](README.es_ES.md) | [Français](README.fr_FR.md) | [Русский](README.ru_RU.md) | [日本語](README.ja_JP.md) | [한국어](README.ko_KR.md) | [Português (Brasil)](README.pt_BR.md) | [Português (Portugal)](README.pt_PT.md)
 
 ---
 
-### **Скачайте автономную версию с [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest)** 
+### **Скачайте автономную версию с [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest)** 
 
 ---
 
@@ -219,7 +219,7 @@ Palworld Save Tools (PST) — это быстрое универсальное �
 
 ### Автономные сборки (рекомендуется)
 
-Предварительно созданные двоичные файлы доступны для всех трех основных платформ из [GitHub Releases](https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest):
+Предварительно созданные двоичные файлы доступны для всех трех основных платформ из [GitHub Releases](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/releases/latest):
 
 | Платформа | Скачать | Требования |
 |----------|----------|--------------|
@@ -246,7 +246,7 @@ PST использует [`uv`](https://docs.astral.sh/uv/) для управл�
 **Требования**: [Python 3.11+](https://www.python.org/) и [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
 ```bash
-git clone https://github.com/deafdudecomputers/PalworldSaveTools.git
+git clone https://github.com/CyrixJD115/PalworldSaveTools-Legacy.git
 cd PalworldSaveTools
 uv run start.py
 ```
@@ -661,8 +661,8 @@ uv run python build/build_interactively.py
 
 </div>
 
-- **Discord:** [Join us for support, base builds, and more!](https://discord.gg/sYcZwcT4cT)
-- **GitHub Проблемы:** [Report a bug](https://github.com/deafdudecomputers/PalworldSaveTools/issues)
+- **Discord:** [Join us for support, base builds, and more!](https://discord.gg/YWZFPy9G8J)
+- **GitHub Проблемы:** [Report a bug](https://github.com/CyrixJD115/PalworldSaveTools-Legacy/issues)
 - **Моды Nexus:** [Download & discuss](https://www.nexusmods.com/palworld/mods/3190)
 
 

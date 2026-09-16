@@ -720,6 +720,8 @@
     "non_base_map_objs_removed": "已移除 {count} 个非基地地图对象",
     "non_base_objs_removed": "已移除 {count} 个非基地地图对象",
     "notice.backup": "警告：在使用本工具前务必备份存档！",
+    "notice.dlg_title": "Palworld Save Tools - 已停止维护",
+    "notice.dont_show_again": "不再显示此公告",
     "notice.errors": "若未更新存档，将会出现错误！",
     "notice.patch": "请确保在 v{game_version} 补丁及之后更新存档！",
     "orphaned_bases_deleted": "删除了 {count} 个孤立基地",
@@ -2086,6 +2088,10 @@
     "pal_name_settings.mode_label": "为新朋友命名：",
     "pal_name_settings.mode_hint": "适用于创建帕鲁（帕鲁编辑器、据点帕鲁、全局帕鲁存储）和克隆。输入的昵称总是会覆盖它。",
     "pal_name_settings.sync_nickname": "在批量同步期间应用昵称",
+    "palstudio.tooltip": "PalStudio 链接",
+    "palstudio.website": "网站",
+    "palstudio.discord": "Discord",
+    "palstudio.nexus": "Nexus Mods",
     "deletion.menu.delete_imported_pals": "删除导入的帕鲁",
     "deletion.delete_imported_pals.title": "删除导入的帕鲁",
     "deletion.delete_imported_pals.confirm": "从每个玩家的队伍、帕鲁终端、DPS 存储和所有基地工作人员中删除所有导入的帕鲁 (DNA)？此操作无法撤消。继续？",
@@ -2224,5 +2230,5 @@
     "Transfer complete and backup created!": "转移完成，备份已创建！",
     "update.disable_check": "禁用更新检查",
     "update.check_status.title": "检查更新",
-    "update.check_status.message": "更新检查__ PH0 __。可能需要重新启动才能完全生效。"
+    "update.check_status.message": "更新检查{status}。可能需要重新启动才能完全生效。"
 }

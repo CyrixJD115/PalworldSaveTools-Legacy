@@ -30,12 +30,17 @@ CORNER_RADIUS = 6
 FRAME_CORNER_RADIUS = 8
 MAX_QUANTITY = 999_999_999
 TREE_ROW_HEIGHT = 22
-GITHUB_RAW_URL = 'https://raw.githubusercontent.com/deafdudecomputers/PalworldSaveTools/main/src/common.py'
-GIT_REPO_URL = 'https://github.com/deafdudecomputers/PalworldSaveTools.git'
+GITHUB_RAW_URL = 'https://raw.githubusercontent.com/CyrixJD115/PalworldSaveTools-Legacy/main/src/common.py'
+GIT_REPO_URL = 'https://github.com/CyrixJD115/PalworldSaveTools-Legacy.git'
 STABLE_BRANCH = 'main'
+# The final 2.4.5 release publishes on the original repo so 2.4.4 builds can find it.
+# This build no longer checks for updates; the two URLs below are retained for reference.
 STABLE_VERSION_URL = 'https://api.github.com/repos/deafdudecomputers/PalworldSaveTools/releases/latest'
 RELEASE_DOWNLOAD_URL = 'https://github.com/deafdudecomputers/PalworldSaveTools/releases/download/v{version}/PST_standalone_v{version}.zip'
-RELEASES_PAGE_URL = 'https://github.com/deafdudecomputers/PalworldSaveTools/releases/latest'
+GITHUB_URL = 'https://github.com/CyrixJD115/PalworldSaveTools-Legacy'  # repo root — the fork has no releases page
+PALSTUDIO_SITE_URL = 'https://palworldsavepal.app/'
+PALSTUDIO_DISCORD_URL = 'https://discord.gg/YWZFPy9G8J'
+PALSTUDIO_NEXUS_URL = 'https://www.nexusmods.com/palworld/mods/1827'
 def get_base_path():
     return get_base_dir()
 def get_src_path():
